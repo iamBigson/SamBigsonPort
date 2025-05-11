@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services / Skills - Bigson</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --bg-dark: #1A1A1A;
+      --text-light: #F8F9FA;
+      --text-dark: #212529;
+      --accent-blue: #3A86FF;
+      --accent-purple: #8338EC;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      transition: all 0.3s ease;
+      overflow-x: hidden;
+    }
+
+    .light-mode {
+      background-color: var(--text-light);
+      color: var(--text-dark);
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      background: inherit;
+      z-index: 2;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: 500;
+    }
+
+    .theme-toggle {
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    .page-header {
+      text-align: center;
+      margin: 3rem 1rem 1rem;
+      font-size: 2rem;
+      color: var(--accent-purple);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card {
+      padding: 1.5rem;
+      border-radius: 15px;
+      background: #2a2a2a;
+      transition: 0.3s ease;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .light-mode .card {
+      background: #ffffff;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card i {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      margin: 0.5rem 0;
+      color: var(--accent-blue);
+    }
+
+    .card p {
+      font-size: 0.95rem;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      background: var(--accent-purple);
+      color: white;
+      font-weight: bold;
+      font-size: 0.85rem;
+    }
+
+    .bg-blobs {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .bg-blobs svg {
+      position: absolute;
+      opacity: 0.2;
+    }
+
+    .blob1 {
+      top: -100px;
+      left: -80px;
+      width: 280px;
+    }
+
+    .blob2 {
+      bottom: -120px;
+      right: -80px;
+      width: 260px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <strong>Bigson</strong>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
+  </nav>
+
+  <h1 class="page-header">Services / Skills</h1>
+
+  <section class="services-grid">
+    <div class="card" style="background: #222b4f;">
+      <i class="fas fa-code" style="color:#3A86FF;"></i>
+      <h3>Frontend Development</h3>
+      <p>Responsive websites using HTML, CSS, JavaScript with creative UI and clean code.</p>
+    </div>
+
+    <div class="card" style="background: #36224c;">
+      <i class="fas fa-fire" style="color:#FF6F61;"></i>
+      <h3>Firebase Integration</h3>
+      <p>Authentication, real-time databases, and storage setup with Firebase for small apps.</p>
+    </div>
+
+    <div class="card" style="background: #2b3a3f;">
+      <i class="fas fa-briefcase" style="color:#00b4d8;"></i>
+      <h3>Portfolio Sites</h3>
+      <p>Personal or business portfolio websites to showcase your work and attract clients.</p>
+    </div>
+
+    <div class="card" style="background: #3d2c3e;">
+      <i class="fas fa-layer-group" style="color:#8338EC;"></i>
+      <h3>Basic Web Apps</h3>
+      <p>Small interactive tools like to-do apps, blogs, or dashboards — tailored to your idea.</p>
+    </div>
+  </section>
+
+  <div style="text-align:center;">
+    <span class="badge">Open to Collaborations</span>
+  </div>
+
+  <div class="bg-blobs">
+    <svg class="blob1" viewBox="0 0 200 200"><path fill="#3A86FF" d="M48.3,-62.6C62.6,-53.7,74.7,-41.7,75.9,-28.8C77.2,-15.9,67.7,-2.2,60.3,10.8C52.9,23.7,47.6,36,38.5,49.6C29.3,63.1,16.6,77.9,0.7,77.3C-15.2,76.8,-30.4,60.9,-44.2,47.5C-58,34,-70.4,23,-72.8,9.9C-75.3,-3.2,-67.7,-18.3,-57.9,-32.5C-48.1,-46.7,-36.1,-60.1,-21.8,-66.7C-7.5,-73.4,9.2,-73.3,24.8,-69.1C40.4,-64.8,54.1,-56.5,48.3,-62.6Z" transform="translate(100 100)" /></svg>
+    <svg class="blob2" viewBox="0 0 200 200"><path fill="#8338EC" d="M37.7,-53.9C52.5,-44.7,70.3,-37.9,75.8,-26.3C81.3,-14.7,74.5,1.7,68.3,17.6C62.1,33.5,56.5,48.9,45.2,57.8C33.9,66.6,16.9,69,-0.7,69.9C-18.3,70.9,-36.6,70.4,-45.3,60.8C-54.1,51.1,-53.4,32.3,-55.6,15.5C-57.8,-1.4,-63,-15.9,-59.8,-27.6C-56.7,-39.4,-45.3,-48.4,-33,-56.6C-20.7,-64.7,-10.3,-71.9,0.8,-73C11.9,-74,23.9,-69.1,37.7,-53.9Z" transform="translate(100 100)" /></svg>
+  </div>
+
+  <footer>
+    &copy; 2025 Bigson. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+      const toggle = document.querySelector('.theme-toggle');
+      toggle.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
+    }
+  </script>
+</body>
+</html>
